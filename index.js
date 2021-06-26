@@ -7,5 +7,11 @@ express()
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'ejs')
   .get('/', (req, res) => res.render('pages/index'))
-  .post('/sendmail/', (req, res) => res.render('pages/index'))
+  .post('/sendmail', (req, res) => {
+  //console.log(req.body);
+  res.set('000','success')
+    res.send({
+        msg: 'set演示'
+    })
+})
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
